@@ -1,30 +1,90 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="bg" class="dark">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>web</title>
-  <script type="module" crossorigin src="/assets/index-OQPk9aBY.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Bsb_Qo02.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Изтегли FocusGuard</title>
+    <!-- Use Tailwind via CDN for a zero-build setup perfectly matching current UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "hsl(240 10% 3.9%)",
+                        foreground: "hsl(0 0% 98%)",
+                        accent: "hsl(240 3.7% 15.9%)",
+                        mutedForeground: "hsl(240 5% 64.9%)",
+                        highlight: "#f7c44d",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+    </style>
 </head>
 
-<body>
-  <div id="root"></div>
-  <script>
-    window.addEventListener('error', function (e) {
-      document.body.innerHTML += '<div style="position:fixed; z-index:9999; top:0; left:0; width:100%; padding:20px; background:rgba(255,0,0,0.8); color:white; font-family:monospace; white-space:pre-wrap;">Uncaught Error: ' + e.message + '\n' + (e.error ? e.error.stack : '') + '</div>';
-    });
-    window.addEventListener('unhandledrejection', function (e) {
-      document.body.innerHTML += '<div style="position:fixed; z-index:9999; top:0; left:0; width:100%; padding:20px; background:rgba(255,0,0,0.8); color:white; font-family:monospace; white-space:pre-wrap;">Unhandled Promise Rejection: ' + (e.reason ? (e.reason.message || e.reason) + '\n' + e.reason.stack : 'Unknown reason') + '</div>';
-    });
-    const originalConsoleError = console.error;
-    console.error = function (...args) {
-      document.body.innerHTML += '<div style="position:fixed; z-index:9999; bottom:0; left:0; width:100%; padding:20px; background:rgba(150,0,0,0.8); color:white; font-family:monospace; white-space:pre-wrap;">Console Error: ' + args.join(' ') + '</div>';
-      originalConsoleError.apply(console, args);
-    };
-  </script>
+<body class="bg-background text-foreground antialiased min-h-screen flex items-center justify-center">
+
+    <section class="w-full py-8 sm:py-16 lg:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl border-none shadow-lg bg-accent py-8 sm:py-16 lg:py-24">
+                <div class="flex flex-wrap items-center justify-between gap-8 px-8 sm:flex-nowrap sm:px-16 lg:px-24">
+
+                    <div class="max-w-xs lg:max-w-lg">
+                        <h2 class="mb-4 text-3xl font-bold">
+                            Започни да работиш по-умно още днес!
+                        </h2>
+                        <p class="text-mutedForeground text-lg font-medium">
+                            Изтегли FocusGuard и открий колко повече можеш да постигнеш,
+                            когато фокусът е на твоя страна.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-6 max-md:w-full max-md:flex-col md:justify-end">
+
+                        <!-- Mac Download Button -->
+                        <!-- The href points to the dmg file that you will place in this folder -->
+                        <a href="focusguard-mac.dmg" download
+                            class="bg-highlight hover:bg-yellow-500 transition-colors flex w-[200px] items-center gap-4 rounded-md px-6 py-3 cursor-pointer">
+                            <img src="https://cdn.shadcnstudio.com/ss-assets/brand-logo/apple-icon.png" alt="Apple"
+                                class="w-8 h-8" />
+                            <div class="flex flex-col items-start">
+                                <p class="text-black text-xs leading-4">Изтегли за</p>
+                                <p class="text-black text-base leading-6 font-medium opacity-90">
+                                    MacOS
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- Windows Download Button -->
+                        <!-- The href points to the exe file that you will place in this folder -->
+                        <a href="focusguard-windows.exe" download
+                            class="bg-highlight hover:bg-yellow-500 transition-colors flex w-[200px] items-center gap-4 rounded-md px-6 py-3 cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" fill="black" class="w-8 h-8">
+                                <path
+                                    d="M0 12.402l35.688-4.86.012 34.223-35.7-.564V12.402zm35.676 33.435l-.012 34.629-35.664-4.887V45.292l35.676.545zM40.117 6.36L87.973 0v41.285l-47.856-.713V6.36zm0 39.38l47.856.712v41.442l-47.856-6.685V45.74z" />
+                            </svg>
+                            <div class="flex flex-col items-start">
+                                <p class="text-black text-xs leading-4">Изтегли за</p>
+                                <p class="text-black text-base leading-6 font-medium opacity-90">
+                                    Windows
+                                </p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 
 </html>
