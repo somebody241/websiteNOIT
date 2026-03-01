@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>web</title>
+  <script type="module" crossorigin src="/assets/index-OQPk9aBY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Bsb_Qo02.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    window.addEventListener('error', function (e) {
+      document.body.innerHTML += '<div style="position:fixed; z-index:9999; top:0; left:0; width:100%; padding:20px; background:rgba(255,0,0,0.8); color:white; font-family:monospace; white-space:pre-wrap;">Uncaught Error: ' + e.message + '\n' + (e.error ? e.error.stack : '') + '</div>';
+    });
+    window.addEventListener('unhandledrejection', function (e) {
+      document.body.innerHTML += '<div style="position:fixed; z-index:9999; top:0; left:0; width:100%; padding:20px; background:rgba(255,0,0,0.8); color:white; font-family:monospace; white-space:pre-wrap;">Unhandled Promise Rejection: ' + (e.reason ? (e.reason.message || e.reason) + '\n' + e.reason.stack : 'Unknown reason') + '</div>';
+    });
+    const originalConsoleError = console.error;
+    console.error = function (...args) {
+      document.body.innerHTML += '<div style="position:fixed; z-index:9999; bottom:0; left:0; width:100%; padding:20px; background:rgba(150,0,0,0.8); color:white; font-family:monospace; white-space:pre-wrap;">Console Error: ' + args.join(' ') + '</div>';
+      originalConsoleError.apply(console, args);
+    };
+  </script>
+</body>
+
+</html>
